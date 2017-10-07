@@ -3,7 +3,7 @@ const request = require('supertest');
 const app = require('../../app');
 
 describe('Drivers controller', () => {
-	it.only('Post request to /api/drivers creates a new driver', (done) => {
+	it('Post request to /api/drivers creates a new driver', (done) => {
 		request(app)
 			.post('/api/drivers')
 			.send({ email: 'test@test.com' })
