@@ -8,7 +8,7 @@ module.exports = {
 		Driver.create(driverProps)
 			.then(driver => res.send(driver))
 			.catch(done);
-	}
+	},
 
 	edit(req, res, next){
 		const driverId = req.params.id;
