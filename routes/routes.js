@@ -6,5 +6,8 @@ module.exports = (app) => {
 	// to the route http://localhost:3010/api
 	// app.get('/api', DriversController.greeting);
 
-	app.post('/api/drivers', DriversController.create);
+	app.post('/api/drivers', DriversController.create); //post() requests are associated with creating data
+
+	app.put('/api/drivers/:id', DriversController.edit); // put() requests are associated with editing data
+	//:id represents any id of the driver in the database
 };
