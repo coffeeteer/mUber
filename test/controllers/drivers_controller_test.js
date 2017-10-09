@@ -39,16 +39,15 @@ describe('Drivers controller', () => {
   });
 
   it('DELETE to /api/driver/id removes existing driver', done => {
-    const driver = new Driver({ email: 't@t.com', driving: false });
+    const driver = new Driver({ email: 'test@test.com', driving: false });
 
     driver.save().then(() => {
       request(app)
-        .put(`/api/drivers/${driver._id}`)
-        .send({ driving: true })
+        .delete(`/api/drivers/${driver._id}`)
         .end(() => {
-          Driver.findOneAndRemove({ email: 't@t.com'})
+          Driver.findOne({ email: 'test@test.com'})
             .then(driver => {
-              assert(driver.driving === true);
+              assert(driver === null);
               done();
             });
         });

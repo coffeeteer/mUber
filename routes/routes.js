@@ -11,5 +11,5 @@ module.exports = (app) => {
 	app.put('/api/drivers/:id', DriversController.edit); // put() requests are associated with editing data
 	//:id represents any id of the driver in the database
 
-	app.delete('/api/drivers/:id', DriversController.remove);
+	app.delete('/api/drivers/:id', DriversController.delete);
 };
