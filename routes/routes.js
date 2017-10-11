@@ -12,4 +12,6 @@ module.exports = (app) => {
 	//:id represents any id of the driver in the database
 
 	app.delete('/api/drivers/:id', DriversController.delete);
+
+	app.get('/api/drivers', DriversController.index); // get requests are displaying of data
 };
